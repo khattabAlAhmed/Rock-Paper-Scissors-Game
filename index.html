@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tec Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="game">
+        <div class="player top">
+            <div class="choices">
+                <div class="p1 rock">
+                    <img src="imgs/rock.jpg" alt="">
+                </div>
+                <div class="p1 paper">
+                    <img src="imgs/paper.jpg" alt="">
+
+                </div>
+                <div class="p1 scissors">
+                    <img src="imgs/scissors.jpg" alt="">
+
+                </div>
+            </div>
+            <div class="info">
+                <p class="name">Khattab</p>
+                <p class="wins">0</p>
+            </div>
+        </div>
+        <div class="board">
+            <div class="msg">You Won!</div>
+            <img src="imgs/rockBig.png" alt="" class="imgTop">
+            <img src="imgs/scissorsBig.png" alt="" class="imgBottom">
+        </div>
+        <div class="buttons">
+            <button onclick="reset()"><i class="fa fa-refresh" aria-hidden="true"></i>
+            </button>
+            <button onclick="showOptionsList()"><i class="fa-solid fa-gear"></i></button>
+            <button onclick="closeGame()">X</button>
+        </div>
+        <div class="optionsList" id="optionsList">
+            <!-- ::before -->
+            <button onclick="changeName()">Change Name</button>
+            <button onclick="reset()">Reset Game</button>
+            <button onclick="closeGame()">Close Game</button>
+            <button onclick="showOptionsList()">X</button>
+        </div>
+        <div class="counter">
+
+        </div>
+        <div class="player bottom">
+
+            <div class="choices">
+                <div class="p2 rock">
+                    <img src="imgs/rock.jpg" class="rock" alt="">
+                </div>
+                <div class="p2 paper">
+                    <img src="imgs/paper.jpg" class="paper" alt="">
+                </div>
+                <div class="p2 scissors">
+                    <img src="imgs/scissors.jpg" class="scissors" alt="">
+                </div>
+            </div>
+
+            <div class="info">
+                <p class="name">Khattab</p>
+                <p class="wins">0</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/4d92833f95.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

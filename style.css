@@ -1,0 +1,371 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: darkslategray;
+    background-image: linear-gradient(to right, #7c2089, #ff9e3f);
+}
+
+.game {
+    background-color: yellowgreen;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 600px;
+    /* padding: 10px 0; */
+    border-radius: 20px;
+    /* overflow: hidden; */
+    position: relative;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.601),
+        inset 0px 0px 20px rgba(0, 0, 0, 0.601)
+}
+
+.player {
+    height: 100px;
+}
+
+.player:first-child {
+    rotate: 180deg;
+}
+
+.player .info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 0px 0px 20px 20px;
+    height: 30px;
+    background-color: brown;
+    color: #ffe790;
+}
+
+
+
+.player .choices {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 70px;
+}
+
+.player .choices div {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all ease .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.player .choices img {
+    height: 100%;
+    transition: all ease .5s;
+}
+
+.player .choices div:hover {
+    transform: scale(1.1);
+}
+
+.player .choices div:hover img {
+    transform: scale(1.3);
+    rotate: 25deg;
+}
+
+
+
+
+
+.board {
+    height: 400px;
+    /* background-color: brown; */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    background: url(imgs/boardBackground.jpg) no-repeat center;
+    background-size: contain;
+
+}
+
+.board img {
+    /* width: 180px; */
+    height: 170px;
+    position: absolute;
+    display: none;
+
+
+}
+
+
+
+
+.board img:nth-child(2) {
+    top: 0;
+    transform: rotate(180deg);
+    animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+    animation-duration: 2s;
+    animation-name: drawTop;
+    animation-fill-mode: forwards;
+
+}
+
+.board img:last-child {
+    bottom: 0;
+    animation: drawBottom 2s cubic-bezier(0.65, 0.05, 0.36, 1);
+    animation-fill-mode: forwards;
+}
+
+@keyframes drawTop {
+    0% {
+        top: -170px;
+    }
+
+    25% {
+        top: -5px;
+    }
+
+    30% {
+        top: -4px;
+    }
+
+    35% {
+        top: -3px;
+    }
+
+    40% {
+        top: -2px;
+    }
+
+    45% {
+        top: -1px;
+    }
+
+    50% {
+        top: 0px;
+    }
+
+    55% {
+        top: -1px;
+    }
+
+    60% {
+        top: -2px;
+    }
+
+    65% {
+        top: -3px;
+    }
+
+    70% {
+        top: -4px;
+    }
+
+    75% {
+        top: -5px;
+    }
+
+    100% {
+        top: -170px;
+    }
+}
+
+@keyframes drawBottom {
+    0% {
+        bottom: -170px;
+    }
+
+    25% {
+        bottom: -5px;
+    }
+
+    30% {
+        bottom: -4px;
+    }
+
+    35% {
+        bottom: -3px;
+    }
+
+    40% {
+        bottom: -2px;
+    }
+
+    45% {
+        bottom: -1px;
+    }
+
+    50% {
+        bottom: 0px;
+    }
+
+    55% {
+        bottom: -1px;
+    }
+
+    60% {
+        bottom: -2px;
+    }
+
+    65% {
+        bottom: -3px;
+    }
+
+    70% {
+        bottom: -4px;
+    }
+
+    75% {
+        bottom: -5px;
+    }
+
+    100% {
+        bottom: -170px;
+    }
+}
+
+.buttons {
+    position: absolute;
+    left: -45px;
+    top: 235px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    /* margin: 0; */
+    /* background-color: red; */
+    overflow: hidden;
+
+}
+
+.buttons button {
+    background-color: greenyellow;
+    border: 0px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: rgb(120, 255, 47);
+}
+
+.optionsList button:last-child {
+    top: -10px;
+    /* onclick: "closeGame()"; */
+    right: -10px;
+    background-color: plum;
+    color: #000;
+    font-weight: 600;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 7.5px 12.5px; */
+    /* font-size: 15px; */
+    cursor: pointer;
+    border-radius: 25px;
+    border: #fff solid 2px;
+    position: absolute;
+
+}
+
+.optionsList::before:hover {
+    display: none;
+}
+
+.optionsList {
+    position: absolute;
+    background-color: brown;
+    border: 2px solid greenyellow;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    min-height: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 25px;
+    display: none;
+    transition: all 3s ease;
+}
+
+.optionsList.show {
+    display: flex;
+}
+
+.optionsList button {
+    border: 2px solid greenyellow;
+    padding: 10px 5px;
+    border-radius: 25px;
+    cursor: pointer;
+    background: brown;
+    color: #fff;
+    font-size: 20px;
+}
+
+.optionsList button:hover {
+    background-color: rgb(189, 47, 47);
+    color: #fff;
+}
+
+.msg {
+    width: 300px;
+    min-hight: 50px;
+    background-color: crimson;
+    border: 2px solid #FFF;
+    border-radius: 15px 5px 15px 5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-name: msg;
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;
+    float: left;
+    position: absolute;
+    display: flex;
+text-align:center;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-weight: 500;
+    font-size: 30px;
+    display: none;
+
+}
+
+@keyframes msg {
+    0% {
+        left: 700px;
+    }
+
+    30% {
+        left: 50%;
+    }
+
+    60% {
+        left: 50%;
+    }
+
+    100% {
+        left: -300px;
+    }
+}
